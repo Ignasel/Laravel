@@ -21,4 +21,11 @@ class HomeController extends Controller
         return view ('skelbimai.pages.profiles');
     //return view ('profile', compact('darbuotojai'));
     }
+
+    public function showSkelbimai(){
+
+
+        return view ('skelbimai.pages.skelbimai');
+
+    }
 }

@@ -13,4 +13,5 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/profile', 'HomeController@showProfile');
+Route::get('/skelbimai', 'SkelbimaiController@showSkelbimai');
 
