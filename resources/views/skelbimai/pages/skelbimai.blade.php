@@ -1,3 +1,6 @@
 @extends('skelbimai/main')
 
-@include('skelbimai/_partials/popular')
+
+@section('content')
+    @include('skelbimai/_partials/popular')
+@stop
