@@ -28,4 +28,24 @@ class HomeController extends Controller
         return view ('skelbimai.pages.skelbimai');
 
     }
+
+    public function showSkelbimas(){
+
+
+        return view ('skelbimai.pages.skelbimas');
+
+    }
+    public function showAbout(){
+
+
+        return view ('skelbimai.pages.about');
+
+    }
+    public function showContact(){
+
+
+        return view ('skelbimai.pages.contact');
+
+    }
+
 }

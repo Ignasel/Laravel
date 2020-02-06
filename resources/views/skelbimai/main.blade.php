@@ -27,9 +27,8 @@
         <div class="site-mobile-menu-body"></div>
     </div>
 
-
+@include('skelbimai/_partials/admin2')
 @include('skelbimai/_partials/header')
-@include('skelbimai/_partials/form')
 @yield('content')
 @include('skelbimai/_partials/categories')
 @include('skelbimai/_partials/footer')

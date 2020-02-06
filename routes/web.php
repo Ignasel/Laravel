@@ -13,5 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/profile', 'HomeController@showProfile');
-Route::get('/skelbimai', 'SkelbimaiController@showSkelbimai');
+Route::get('/skelbimai', 'HomeController@showSkelbimai');
+Route::get('/skelbimas', 'HomeController@showSkelbimas');
+Route::get('/about', 'HomeController@showAbout');
+Route::get('/contact', 'HomeController@showContact');
 
