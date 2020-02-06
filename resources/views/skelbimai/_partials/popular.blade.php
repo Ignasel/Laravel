@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="d-block d-md-flex listing vertical">
-                        <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
+                        <a href="listings-single.html" class="img d-block" style="  background-image: url('images/img_2.jpg')"></a>
                         <div class="lh-content">
                             <span class="category">Real Estate</span>
                             <a href="#" class="bookmark"><span class="icon-heart"></span></a>
@@ -120,7 +120,7 @@
                     </div>
 
                     <div class="d-block d-md-flex listing vertical">
-                        <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_3.jpg')"></a>
+                        <a href="listings-single.html" class="img d-block" style="background-image: url('/images/img_3.jpg')"></a>
                         <div class="lh-content">
                             <span class="category">Furniture</span>
                             <a href="#" class="bookmark"><span class="icon-heart"></span></a>
