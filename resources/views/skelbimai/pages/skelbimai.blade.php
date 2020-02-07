@@ -21,29 +21,24 @@
                 <div class="col-lg-12">
 
                     <div class="row">
-    @for($i=0; $i<10; $i++)
+@foreach($ads as $ad)
         <div class="col-lg-6">
-
             <div class="d-block d-md-flex listing vertical">
-                <a href="/skelbimas" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
+                <a href="/select/{{$ad->id}}" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
                 <div class="lh-content">
-                    <span class="category">Real Estate</span>
+                    @foreach($categories as $category)
+                        @if($ad->cat_id == $category->id)
+                            <span class="category">{{$category->name}}</span>
+                        @endif
+                    @endforeach
                     <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#">House with Swimming Pool</a></h3>
-                    <address>Don St, Brooklyn, New York</address>
-                    <p class="mb-0">
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-warning"></span>
-                        <span class="icon-star text-secondary"></span>
-                        <span class="review">(3 Reviews)</span>
-                    </p>
+                    <h3><a href="#"></a>{{$ad->title}}</h3>
+                    <p>{{$ad->description}}</p>
+                    <p>{{$ad->location}}</p>
                 </div>
             </div>
-
         </div>
-    @endfor
+@endforeach
 
                     </div>
                 </div>
