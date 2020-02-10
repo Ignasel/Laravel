@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/profile', 'HomeController@showProfile');
 Route::get('/skelbimai', 'HomeController@showSkelbimai');
-Route::get('/skelbimas', 'HomeController@showSkelbimas');
+Route::get('/skelbimas/{ad}', 'HomeController@showSkelbimas');
 Route::get('/about', 'HomeController@showAbout');
 Route::get('/contact', 'HomeController@showContact');
 Route::get('/addCat', 'AdControler@addCat');
@@ -25,6 +25,8 @@ Route::get('/salinti/category/{category}', 'CatController@deleteCat');
 Route::get('/salinti/ad/{ad}', 'AdController@deleteAd');
 Route::post('/store-ad', 'AdController@storeAd');
 Route::get('/controlAds', 'AdController@showAds');
-Route::get('/select/{ad}', 'AdController@selectAd');
+Route::get('/updateAd/ad/{ad}', 'AdController@updateAd');
+Route::get('/ad_update/{ad}', 'AdController@ad_update');
+
 
 

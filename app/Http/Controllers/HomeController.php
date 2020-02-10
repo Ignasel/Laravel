@@ -26,16 +26,18 @@ class HomeController extends Controller
 
     public function showSkelbimai(){
 
-        $categories = Category::all();
-        $ads = Ad::all();
-        return view ('skelbimai.pages.skelbimai', compact('ads','categories'));
+        $ads = Ad::select('ads.id', 'ads.title', 'ads.description', 'ads.price', 'ads.email', 'ads.phone', 'ads.location',
+            'ads.cat_id', 'ads.created_at', 'categories.name')->join('categories', 'categories.id', "=", 'ads.cat_id')->paginate(2);
+
+
+        return view ('skelbimai.pages.skelbimai', compact('ads'));
 
     }
 
-    public function showSkelbimas(){
+    public function showSkelbimas(Ad $ad){
 
 
-        return view ('skelbimai.pages.skelbimas');
+        return view ('skelbimai.pages.skelbimas', compact ("ad"));
 
     }
     public function showAbout(){

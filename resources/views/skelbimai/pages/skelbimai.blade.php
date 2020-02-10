@@ -24,15 +24,11 @@
 @foreach($ads as $ad)
         <div class="col-lg-6">
             <div class="d-block d-md-flex listing vertical">
-                <a href="/select/{{$ad->id}}" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
+                <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
                 <div class="lh-content">
-                    @foreach($categories as $category)
-                        @if($ad->cat_id == $category->id)
-                            <span class="category">{{$category->name}}</span>
-                        @endif
-                    @endforeach
+                            <span class="category">{{$ad->name}}</span>
                     <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="#"></a>{{$ad->title}}</h3>
+                    <h3><a href="/skelbimas/{{$ad->id}}"></a>{{$ad->title}}</h3>
                     <p>{{$ad->description}}</p>
                     <p>{{$ad->location}}</p>
                 </div>
@@ -48,11 +44,7 @@
 
     <div class="col-12 mt-5 text-center">
         <div class="custom-pagination">
-            <span>1</span>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <span class="more-page">...</span>
-            <a href="#">10</a>
+           {{$ads->links()}}
         </div>
     </div>
 @stop

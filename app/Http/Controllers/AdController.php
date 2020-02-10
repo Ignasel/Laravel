@@ -57,9 +57,37 @@ class AdController extends Controller
 
     }
 
-    public function selectAd()
-    {
-        $id = $_GET['id'];
-        return view ('skelbimai.pages.skelbimas', $id);
+    public function updateAd(Ad $ad){
+
+            return view ('skelbimai.pages.updateAd', compact('ad'));
+
     }
+
+    public function ad_update(Request $request, Ad $ad){
+
+//        dd($ad);
+
+        $validateData = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'location' => 'required'
+        ]);
+
+        Ad::where('id', $ad->id )
+            ->update(['title' => request('title'),
+                'description' => request('description'),
+                'price' => request('price'),
+                'email' => request('email'),
+                'phone' => request('phone'),
+                'location' => request('location')
+        ]);
+
+
+        return redirect('controlAds');
+
+    }
+
 }

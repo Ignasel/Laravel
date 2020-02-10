@@ -60,6 +60,7 @@
                             @endforeach
                                 <td>{{$ad->created_at}}</td>
                                 <td><a href="/salinti/ad/{{$ad->id}}">Šalinti</a></td>
+                                <td><a href="/updateAd/ad/{{$ad->id}}">Koreguoti</a></td>
                             </tr>
                         @endforeach
                     </table>
