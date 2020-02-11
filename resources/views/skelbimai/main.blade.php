@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="{{ mix('/css/bootstrap/bootstrap.css') }}"/>
     <link rel="stylesheet" href="{{ mix('/css/vendor.css') }}"/>
     <link rel="stylesheet" href="{{ mix('/css/style.css') }}"/>
-
-
-
-
     <title>Document</title>
 </head>
 <body>

@@ -29,7 +29,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="/store-ad" class="p-5 bg-white">
+                    <form method="post" action="/store-ad" enctype="multipart/form-data" class="p-5 bg-white">
                         @csrf
                         <div class="row form-group">
 
@@ -59,11 +59,11 @@
                             </div>
                             <div class="col-md-12">
                                 <label class="text-black" for="name">Kategorija</label>
-                                @foreach($categories as $category)
                             <select class="form-control" name="cat_id" >
+                                @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
                             </select>
-                                    @endforeach
                         </div>
                             <div class="col-md-12">
                                 <label class="text-black" for="name">Nuotraukos:</label>

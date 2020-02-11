@@ -9,7 +9,12 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view ('skelbimai.pages.home');
+
+        $ads = Ad::select('ads.id', 'ads.title', 'ads.description', 'ads.price', 'ads.email', 'ads.phone', 'ads.location',
+            'ads.cat_id', 'ads.created_at', 'categories.name')->join('categories', 'categories.id', "=", 'ads.cat_id')->get();
+        $categories = Category::all();
+
+        return view ('skelbimai.pages.home', compact('ads'), compact('categories'));
     }
 
     public function showProfile(){
@@ -27,7 +32,7 @@ class HomeController extends Controller
     public function showSkelbimai(){
 
         $ads = Ad::select('ads.id', 'ads.title', 'ads.description', 'ads.price', 'ads.email', 'ads.phone', 'ads.location',
-            'ads.cat_id', 'ads.created_at', 'categories.name')->join('categories', 'categories.id', "=", 'ads.cat_id')->paginate(2);
+            'ads.cat_id', 'ads.created_at', 'ads.img', 'categories.name')->join('categories', 'categories.id', "=", 'ads.cat_id')->paginate(2);
 
 
         return view ('skelbimai.pages.skelbimai', compact('ads'));

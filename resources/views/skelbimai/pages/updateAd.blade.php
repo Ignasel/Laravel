@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label class="text-black" for="price">Kaina</label>
-                                <input type="decimal" id="name" value="{{$ad->price}}" name="price" class="form-control">
+                                <input type="text" id="name" value="{{$ad->price}}" name="price" class="form-control">
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="exampleInputEmail1">El. paštas</label>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label class="text-black" for="name">Telefonas</label>
-                                <input type="decimal" id="phone" name="phone" value="{{$ad->phone}}" class="form-control">
+                                <input type="text" id="phone" name="phone" value="{{$ad->phone}}" class="form-control">
                             </div>
                             <div class="col-md-12">
                                 <label class="text-black" for="name">Vieta</label>

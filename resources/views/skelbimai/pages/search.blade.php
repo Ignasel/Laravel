@@ -20,20 +20,20 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-@foreach($ads as $ad)
-        <div class="col-lg-6">
-            <div class="d-block d-md-flex listing vertical">
-                <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url(/{{$ad->img}})"></a>
-                <div class="lh-content">
-                            <span class="category">{{$ad->name}}</span>
-                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                    <h3><a href="/skelbimas/{{$ad->id}}"></a>{{$ad->title}}</h3>
-                    <p>{{$ad->description}}</p>
-                    <p>{{$ad->location}}</p>
-                </div>
-            </div>
-        </div>
-@endforeach
+                        @foreach($ads as $ad)
+                            <div class="col-lg-6">
+                                <div class="d-block d-md-flex listing vertical">
+                                    <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url('images/img_2.jpg')"></a>
+                                    <div class="lh-content">
+                                        <span class="category">{{$ad->name}}</span>
+                                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                                        <h3><a href="/skelbimas/{{$ad->id}}"></a>{{$ad->title}}</h3>
+                                        <p>{{$ad->description}}</p>
+                                        <p>{{$ad->location}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
                     </div>
                 </div>
@@ -43,8 +43,9 @@
 
     <div class="col-12 mt-5 text-center">
         <div class="custom-pagination">
-           {{$ads->links()}}
         </div>
     </div>
-@stop
 
+
+
+@stop

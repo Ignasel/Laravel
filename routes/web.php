@@ -17,7 +17,7 @@ Route::get('/skelbimai', 'HomeController@showSkelbimai');
 Route::get('/skelbimas/{ad}', 'HomeController@showSkelbimas');
 Route::get('/about', 'HomeController@showAbout');
 Route::get('/contact', 'HomeController@showContact');
-Route::get('/addCat', 'AdControler@addCat');
+Route::get('/addCat', 'CatController@addCat');
 Route::post('/store-category', 'CatController@storeCategory');
 Route::get('/controlCat', 'CatController@showCategories');
 Route::get('/addAd', 'AdController@addAd');
@@ -27,6 +27,7 @@ Route::post('/store-ad', 'AdController@storeAd');
 Route::get('/controlAds', 'AdController@showAds');
 Route::get('/updateAd/ad/{ad}', 'AdController@updateAd');
 Route::get('/ad_update/{ad}', 'AdController@ad_update');
+Route::get('/searchIt', 'AdController@search');
 
 
 
