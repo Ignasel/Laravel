@@ -26,8 +26,13 @@ Route::get('/salinti/ad/{ad}', 'AdController@deleteAd');
 Route::post('/store-ad', 'AdController@storeAd');
 Route::get('/controlAds', 'AdController@showAds');
 Route::get('/updateAd/ad/{ad}', 'AdController@updateAd');
-Route::get('/ad_update/{ad}', 'AdController@ad_update');
+Route::post('/ad_update/{ad}', 'AdController@ad_update');
 Route::get('/searchIt', 'AdController@search');
 
+
+Auth::routes();
+
+Route::get('/controlAds', 'AdController@showAds');
+Route::get('/logOut', 'AdController@logOut');
 
 

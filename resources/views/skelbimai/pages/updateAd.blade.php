@@ -1,4 +1,5 @@
 @extends('skelbimai/main')
+
 @section('content')
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({!! asset('images/turgus.jpg') !!});" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -28,10 +29,9 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="get" action="/ad_update/{{$ad->id}}" class="p-5 bg-white">
+                    <form method="post" action="/ad_update/{{$ad->id}}" enctype="multipart/form-data" class="p-5 bg-white">
                         @csrf
                         <div class="row form-group" {{$ad->id}}>
-
                             <div class="col-md-12">
                                 <label class="text-black" for="name">Pavadinimas</label>
                                 <input type="text" id="name" value="{{$ad->title}}" name="title" class="form-control">
@@ -63,8 +63,11 @@
                                 </select>
                             </div>
                             <div class="col-md-12">
-                                <label class="text-black" for="name">Nuotraukos:</label>
-                                <input type="file" id="img" name="img" class="form-control">
+                                <div class="col-md-12">
+                                    <label class="text-black" for="name">Nuotraukos:</label>
+                                    <img src="{{'/storage/'.$ad->img}}" alt="Image" class="img-fluid rounded">
+                                    <input type="file" id="img" name="img" class="form-control">
+                                </div>
                             </div>
                         </div>
 

@@ -1,4 +1,5 @@
 @extends('skelbimai/main')
+
 @section('content')
 
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({!! asset('images/turgus.jpg') !!});" data-aos="fade" data-stellar-background-ratio="0.5">

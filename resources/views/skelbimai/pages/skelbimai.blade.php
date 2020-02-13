@@ -23,9 +23,9 @@
 @foreach($ads as $ad)
         <div class="col-lg-6">
             <div class="d-block d-md-flex listing vertical">
-                <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url(/{{$ad->img}})"></a>
+                <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url({{'storage/'.$ad->img}})"></a>
                 <div class="lh-content">
-                            <span class="category">{{$ad->name}}</span>
+                    <span class="category">{{$ad->name}}</span>
                     <a href="#" class="bookmark"><span class="icon-heart"></span></a>
                     <h3><a href="/skelbimas/{{$ad->id}}"></a>{{$ad->title}}</h3>
                     <p>{{$ad->description}}</p>

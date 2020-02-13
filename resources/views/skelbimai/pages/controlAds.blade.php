@@ -1,4 +1,5 @@
 @extends('skelbimai/main')
+
 @section('content')
 
     <div class="site-blocks-cover inner-page-cover overlay"

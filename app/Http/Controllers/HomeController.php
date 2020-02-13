@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Ad;
-use Illuminate\Http\Request;
+    use App\Category;
+    use App\Ad;
+    use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+
+    public function __construct(){
+        $this->middleware('auth',['only' => ['']]);
+    }
+
+
     public function index(){
 
         $ads = Ad::select('ads.id', 'ads.title', 'ads.description', 'ads.price', 'ads.email', 'ads.phone', 'ads.location',
@@ -23,10 +30,10 @@ class HomeController extends Controller
             'Petras',
             'Antanas',
             'Ieva'
-            ];
+        ];
 
         return view ('skelbimai.pages.profiles');
-    //return view ('profile', compact('darbuotojai'));
+        //return view ('profile', compact('darbuotojai'));
     }
 
     public function showSkelbimai(){
@@ -57,5 +64,16 @@ class HomeController extends Controller
         return view ('skelbimai.pages.contact');
 
     }
+
+
+
+
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
 
 }

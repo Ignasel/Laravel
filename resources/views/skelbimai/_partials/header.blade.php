@@ -3,10 +3,10 @@
     <!-- <div class="container"> -->
     <div class="row align-items-center">
 
-        <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><a href="/" class="text-white mb-0">Nemokami <br> Skelbimai</a></h1>
+        <div class="col-6 col-xl-3">
+            <h1 class="mb-0 site-logo"><a href="/" class="text-white mb-0">Nemokami Skelbimai</a></h1>
         </div>
-        <div class="col-12 col-md-10 d-none d-xl-block">
+        <div class="col-12 col-md-9 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
                 <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
