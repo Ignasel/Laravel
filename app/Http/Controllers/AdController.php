@@ -8,13 +8,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use File;
 use Illuminate\Support\Facades\Auth;
+use Gate;
+use App\Providers\AuthServiceProvider;
 
 class AdController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['addAd', 'storeAd', 'showAds', 'updateAd', 'deleteAd']]);
+        $this->middleware('auth', ['only' => ['addAd', 'storeAd', 'showAds', 'updateAd', 'deleteAd', 'comments']]);
     }
 
     public function addAd()
@@ -51,8 +53,11 @@ class AdController extends Controller
             'phone' => request('phone'),
             'location' => request('location'),
             'cat_id' => request('cat_id'),
-            'img' => $filename
+            'img' => $filename,
+            'userID' => Auth::id()
         ]);
+
+
 
         return redirect('/');
     }
@@ -67,15 +72,23 @@ class AdController extends Controller
 
     public function deleteAd(Ad $ad)
     {
-        $ad->delete();
-        return redirect('controlAds');
+        if(Gate::allows('updateAd', $ad)) {
 
+
+            $ad->delete();
+            return redirect('controlAds');
+
+        } return redirect ('error');
     }
 
     public function updateAd(Ad $ad)
     {
+        if(Gate::allows('updateAd', $ad)){
 
         return view('skelbimai.pages.updateAd', compact('ad'));
+    }
+
+    return redirect ('error');
 
     }
 
@@ -131,5 +144,16 @@ class AdController extends Controller
         Auth::logout();
 
         return redirect('/');
+    }
+
+    public function error(){
+
+        return view ('skelbimai.pages.error');
+    }
+
+    public function comments(Ad $ad){
+
+
+        return view ('skelbimai.pages.comment', compact('ad'));
     }
 }

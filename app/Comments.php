@@ -1,0 +1,15 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Comments extends Model
+{
+    protected $fillable = ['ad_id', 'user_id', 'name', 'comment'];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+}

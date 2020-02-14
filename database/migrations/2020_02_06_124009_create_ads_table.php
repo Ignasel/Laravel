@@ -23,6 +23,7 @@ class CreateAdsTable extends Migration
             $table->string('location');
             $table->integer('cat_id');
             $table->string('img')->nullable();
+            $table->integer('userID');
             $table->timestamps();
         });
     }

@@ -28,6 +28,10 @@ Route::get('/controlAds', 'AdController@showAds');
 Route::get('/updateAd/ad/{ad}', 'AdController@updateAd');
 Route::post('/ad_update/{ad}', 'AdController@ad_update');
 Route::get('/searchIt', 'AdController@search');
+Route::get('/error', 'AdController@error');
+Route::get('/comment/{ad}', 'AdController@comments');
+Route::get('/storeComment/{ad}', 'CommentController@storeComment');
+
 
 
 Auth::routes();

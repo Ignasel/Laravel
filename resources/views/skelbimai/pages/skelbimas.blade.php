@@ -1,7 +1,9 @@
 @extends('skelbimai/main')
 @section('content')
 
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({!! asset('images/turgus.jpg') !!});" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover inner-page-cover overlay"
+         style="background-image: url({!! asset('images/turgus.jpg') !!});" data-aos="fade"
+         data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
 
@@ -35,16 +37,26 @@
                     <p>{{$ad->description}}</p>
                     <p>{{$ad->price}} $</p>
 
-                    <p class="mt-3"><a href="#" class="btn btn-primary">Susisiekti</a></p>
-                    <p class="mt-3"><a href="updateAd/{{$ad->id}}" class="btn btn-primary">Redaguoti</a></p>
+                    <a href="#" class="btn btn-primary">Susisiekti</a>
+                    <a href="/comment/{{$ad->id}}" class="btn btn-primary">Komentuoti</a>
 
                 </div>
-                <div class="col-lg-3 ml-auto">
-
-
             </div>
         </div>
     </div>
-
-
-    @stop
+    <div class="row justify-content-center">
+    <div class="col-md-6">
+        @if(count($ad->comments))
+            <div class="comments">
+                <h4>Komentarai</h4>
+                <ul class="list-group">
+                    @foreach($ad->comments as $comment)
+                        <li class="list-group-item">{{$comment->created_at}}<strong>  {{  $comment->user->name  }} </strong></li>
+                        <li class="list-group-item">{{$comment->comment}}</li>
+                    @endforeach
+                    </ul>
+            </div>
+        @endif
+    </div>
+    </div>
+@stop
